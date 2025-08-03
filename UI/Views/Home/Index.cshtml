@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center mt-5">
+    <img src="~/images/minesweeper_glitch.gif" alt="Minesweeper GIF" style="max-width: 300px;" class="mb-4" />
+
+    <h2 class="mb-3">Minesweeper Rules</h2>
+
+    <p class="mb-3">
+        Minesweeper is a logic puzzle where you must clear a minefield without detonating any mines. 
+        Players reveal cells, and numbered cells indicate the number of mines adjacent to them. 
+        The goal is to flag all mine locations and open all safe cells.
+    </p>
+
+    <h4 class="mb-2">Rules:</h4>
+    <ul class="text-start d-inline-block text-left">
+        <li><strong>Board:</strong> The game board consists of a grid of cells.</li>
+        <li><strong>Mines:</strong> Mines are randomly scattered throughout the grid.</li>
+        <li><strong>Opening Cells:</strong> Clicking a cell reveals its content.</li>
+        <li><strong>Number Clues:</strong> Indicates number of adjacent mines (including diagonals).</li>
+        <li><strong>Flagging Mines:</strong> Right-clicking a cell flags it as a potential mine.</li>
+        <li><strong>Chording:</strong> If adjacent flags match number, clicking reveals surrounding cells.</li>
+        <li><strong>Winning:</strong> Flag all mines and open all safe cells.</li>
+        <li><strong>Losing:</strong> You lose if you click on a mine.</li>
+    </ul>
+
+    <h4 class="mt-4 mb-2">Tips:</h4>
+    <ul class="text-start d-inline-block text-left">
+        <li><strong>Start with Corners:</strong> Reveal edge numbers first.</li>
+        <li><strong>Deduction:</strong> Use numbers to figure out safe cells.</li>
+        <li><strong>1-2-1 Pattern:</strong> Learn common patterns to predict mines.</li>
+        <li><strong>Chord When Possible:</strong> Use chording to clear areas faster.</li>
+        <li><strong>Avoid Guessing:</strong> Rely on logic, not chance.</li>
+        <li><strong>Look for Patterns:</strong> Recognize layouts like “1-1”, “1-2-1”, etc.</li>
+        <li><strong>Be Patient:</strong> Think before you click. Minesweeper rewards careful moves.</li>
+    </ul>
+</div>

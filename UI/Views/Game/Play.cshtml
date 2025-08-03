@@ -1,0 +1,66 @@
+﻿@model UI.Models.ViewModels.BoardViewModel
+
+@{
+    ViewData["Title"] = "Minesweeper";
+}
+
+
+<div class="game-container">
+    <div class="header">
+        <span class="menu-item">Minesweeper</span>
+        <span class="menu-link" onclick="location.href='@Url.Action("Index", "Home")'">Help</span>
+    </div>
+
+    <div class="panel">
+        <div class="smiley-box">
+            <button id="smiley" onclick="location.reload()">🙂</button>
+        </div>
+    </div>
+
+    <div id="board"
+         data-gameid="@Model.GameId"
+         class="board-container"
+         data-rows="@Model.Rows"
+         data-columns="@Model.Columns">
+        @for (int r = 0; r < Model.Rows; r++)
+        {
+            <div class="row">
+                @for (int c = 0; c < Model.Columns; c++)
+                {
+                    var cell = Model.Cells.First(x => x.Row == r && x.Col == c);
+                    var cssClass = "cell";
+
+                    if (cell.IsOpened)
+                    {
+                        cssClass += " opened";
+                        if (cell.HasMine) cssClass += " mine";
+                        else if (cell.AdjacentMines > 0) cssClass += $" adjacent-{cell.AdjacentMines}";
+                    }
+                    else if (cell.IsFlagged)
+                    {
+                        cssClass += " flagged";
+                    }
+
+                    <div class="@cssClass"
+                         data-row="@cell.Row"
+                         data-col="@cell.Col"
+                         data-opened="@cell.IsOpened.ToString().ToLower()"
+                         data-flagged="@cell.IsFlagged.ToString().ToLower()"
+                         data-mine="@cell.HasMine.ToString().ToLower()"
+                         data-adjacent="@cell.AdjacentMines">
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</div> 
+
+<div id="gameMessage" class="game-message hidden">
+    <div id="gameMessageText"></div>
+    <button onclick="location.reload()">Play again</button>
+</div>
+
+@section Scripts {
+    <script src="~/js/minesweeper.js"></script>
+}
+<link rel="stylesheet" href="~/css/minesweeper.css" />

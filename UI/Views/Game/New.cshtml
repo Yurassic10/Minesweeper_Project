@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Start New Game";
+}
+
+<link rel="stylesheet" href="~/css/minesweeper.css"/>
+
+<div class="new-game-container">
+<h2>Start New Game</h2>
+
+<form asp-action="StartGame" method="post">
+    <label>Player Name:</label>
+    <input type="text" name="playerName" required />
+    <br />
+
+    <label>Rows:</label>
+    <input type="number" name="rows" value="10" min="5" max="30" required />
+    <br />
+    <label>Columns:</label>
+    <input type="number" name="columns" value="10" min="5" max="30" required />
+    <br />
+    <label>Mines:</label>
+    <input type="number" name="minesCount" value="10" min="1" required />
+    <br />
+    <button type="submit">Start Game</button>
+</form>
+
+</div>

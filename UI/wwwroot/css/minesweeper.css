@@ -1,0 +1,242 @@
+﻿.board {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.row {
+    display: flex;
+}
+
+.cell {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #aaa;
+    background-color: #ccc;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.cell.opened {
+    background-color: #eee;
+    cursor: default;
+}
+
+.cell.flagged::after {
+    content: "🚩";
+}
+
+.cell.mine::after {
+    content: "💣";
+    background-color: red;
+}
+
+.cell.adjacent-1::after {
+    content: "1";
+    color: blue;
+}
+
+.cell.adjacent-2::after {
+    content: "2";
+    color: green;
+}
+
+.cell.adjacent-3::after {
+    content: "3";
+    color: red;
+}
+.game-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    flex-direction: column;
+    font-size: 24px;
+    color: white;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+.game-message button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+.top-panel {
+    width: fit-content;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.menu-bar {
+    background-color: #c0c0c0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 8px;
+    border: 2px solid #808080;
+    border-bottom: none;
+}
+
+.menu-item {
+    font-weight: bold;
+}
+
+.menu-link {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+}
+
+.panel {
+    background-color: #c0c0c0;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    border: 2px solid #808080;
+    margin-bottom: 5px;
+}
+
+.score-box, .timer-box {
+    background-color: black;
+    color: red;
+    font-family: monospace;
+    font-size: 24px;
+    padding: 4px 8px;
+    min-width: 60px;
+    text-align: center;
+    border: 2px inset #808080;
+}
+
+.smiley-box {
+    margin: 0 20px;
+}
+
+.smiley-box button {
+    font-size: 24px;
+    padding: 4px 8px;
+    border: 2px outset #808080;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    margin: 0 auto;
+    border: 2px solid black;
+    padding: 10px;
+    gap: 8px;
+}
+
+.board-container {
+    display: grid;
+    gap: 0;
+}
+
+.board-container .row {
+    display: flex;
+}
+
+
+.new-game-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #999;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.new-game-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.new-game-container label {
+    display: block;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.new-game-container input[type="text"],
+.new-game-container input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.new-game-container button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.new-game-container button:hover {
+    background-color: #45a049;
+}
+
+.results-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fafafa;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
+    font-family: "Segoe UI", sans-serif;
+}
+
+    .results-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #2d2d2d;
+    }
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+    .table th, .table td {
+        padding: 10px;
+        text-align: center;
+        border: 1px solid #ccc;
+    }
+
+    .table thead {
+        background-color: #0078d7;
+        color: white;
+    }
