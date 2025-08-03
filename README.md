@@ -13,7 +13,7 @@
 
 ## 1. Як запустити
 Скачати або клонувати репозиторій:
-   git clone https://github.com/твій_репозиторій/minesweeper.git
+   git clone https://github.com/Yurassic10/Minesweeper_Project.git
 
 ## 2. Створи базу даних
 1. Відкрий Microsoft SQL Server Management Studio або Azure Data Studio
